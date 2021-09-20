@@ -257,9 +257,9 @@ pca.dist.matrix <- function(X, k, dist.method = 'spearman', mc.cores = 1, batch.
 #' DrImpute: Imputing dropout eveents in single cell RNA sequencing data
 dist2 <- function(X, method){
 	if (method == 'spearman')
-		D <- as.matrix(1 - cor(as.matrix(X), method = 'spearman'))
+		D <- as.matrix(1 - stats::cor(as.matrix(X), method = 'spearman'))
 	else if (method == "pearson")
-		D <- as.matrix(1 - cor(as.matrix(X), method = 'pearson'))
+		D <- as.matrix(1 - stats::cor(as.matrix(X), method = 'pearson'))
 	else if (method == "euclidean") 
 		D <- as.matrix(dist(t(as.matrix(X)), method = 'euclidean'))
 	else
